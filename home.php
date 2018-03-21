@@ -12,7 +12,7 @@
     <div class="home__header">
         <h1>Welcome, Bro!</h1>
         <h2 class="home__header__time">7:30 AM</h2>
-        <a href="logout.php">Logout</a>
+        <a href="logout.php"><h2>Logout</h2></a>
     </div>
 
     <div class="home__tile">

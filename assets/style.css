@@ -73,7 +73,7 @@ a {
     justify-items: center;
     align-items: center;
     background: #0D47A1;
-    color: #fff;
+    color: #fff;    
 }
 
 .home__header__time {
@@ -88,10 +88,18 @@ a {
     display: grid;
     grid-template-columns: 150px 1fr;
     grid-gap: 20px;
+    background: #fff;
 }
 
+.home__tile:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    background-color: #0D47A1;;
+    color: #fff;
+}
 
 .home__tile img {
     width: 100%;
-    max-width: 150px;
+    max-width: 130px;
 }

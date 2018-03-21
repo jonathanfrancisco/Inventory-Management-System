@@ -11,7 +11,7 @@
 
     <div class="home__header">
         <h1>Welcome, Bro!</h1>
-        <h2 class="home__header__time">7:30 AM</h2>
+        <h2 class="home__header__time"></h2>
         <a href="logout.php"><h2>Logout</h2></a>
     </div>
 
@@ -58,6 +58,6 @@
             <p>Manage brands for your products</p>
         </div>  
     </a>
-    
+    <script src="assets/app.js"></script>
 </body>
 </html>

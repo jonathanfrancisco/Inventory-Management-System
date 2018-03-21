@@ -59,7 +59,7 @@ a {
 ************************/
 .home {
     display: grid;
-    grid-template-rows: 80px repeat(auto-fit, 1fr);
+    grid-auto-rows: auto-fill;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: .75em;
     min-height: 95vh;

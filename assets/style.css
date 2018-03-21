@@ -9,6 +9,10 @@ input[type="submit"]:hover {
     opacity: 0.85;
 }
 
+a {
+    color: #fff;
+}
+
 /******************
     LOGIN FORM
 *******************/
@@ -47,4 +51,47 @@ input[type="submit"]:hover {
 
 .login__form input[type="submit"] {
     background-color: #1A237E;
+}
+
+
+/***********************
+    HOME / DASHBOARD
+************************/
+.home {
+    display: grid;
+    grid-template-rows: 80px repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: .75em;
+    min-height: 95vh;
+    margin: 0;
+}
+
+.home__header {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    background: #0D47A1;
+    color: #fff;
+}
+
+.home__header__time {
+    text-decoration: underline;
+}
+
+.home__tile {
+    grid-column: span 2;
+    padding: 1em;
+    padding-left: 2em;
+    box-shadow: 0px 0px 5px 2px #c5c5c5;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 20px;
+}
+
+
+.home__tile img {
+    width: 100%;
+    max-width: 150px;
 }

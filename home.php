@@ -15,48 +15,49 @@
         <a href="logout.php"><h2>Logout</h2></a>
     </div>
 
-    <div class="home__tile">
+    <a href="pos.php" class="home__tile">
         <img src="assets/images/sell.png">
         <div class="home__tile__description">
             <h1>Sell Products</h1>
             <p>Lorem Ipsum bla bla bla</p>
         </div>  
-    </div>
-    <div class="home__tile">
+    </a>
+
+   <a href="products.php" class="home__tile">
         <img src="assets/images/products.png">
         <div class="home__tile__description">
             <h1>Products</h1>
             <p>Lorem Ipsum bla bla bla</p>
         </div>  
-    </div>
-    <div class="home__tile">
+    </a>
+    <a href="sales-inventory.php" class="home__tile">
         <img src="assets/images/logs.png">
         <div class="home__tile__description">
-            <h1>Sales & Inventory logs</h1>
+            <h1>Sales & Inventory Logs</h1>
             <p>Lorem Ipsum bla bla bla</p>
         </div>  
-    </div>
-    <div class="home__tile">
+    </a>
+    <a href="category.php" class="home__tile">
         <img src="assets/images/category.png">
         <div class="home__tile__description">
             <h1>Category</h1>
             <p>Lorem Ipsum bla bla bla</p>
         </div>  
-    </div>
-    <div class="home__tile">
+    </a>
+    <a href="settings-users.php" class="home__tile">
         <img src="assets/images/users.png">
         <div class="home__tile__description">
-            <h1>Account settings & Users</h1>
+            <h1>My Account Settings & Users</h1>
             <p>Lorem Ipsum bla bla bla</p>
         </div>  
-    </div>
-    <div class="home__tile">
+    </a>
+    <a href="brand.php" class="home__tile">
         <img src="assets/images/brand.png">
         <div class="home__tile__description">
             <h1>Brand</h1>
             <p>Lorem Ipsum bla bla bla</p>
         </div>  
-    </div>
+    </a>
     
 </body>
 </html>

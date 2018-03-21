@@ -36,7 +36,7 @@ a {
 
 .login__form label {
     font-size: 1.2em;
-    color: #2962FF;
+    color: #673AB7;
 }
 
 .login__form input {
@@ -50,7 +50,7 @@ a {
 } 
 
 .login__form input[type="submit"] {
-    background-color: #1A237E;
+    background-color: #673AB7;
 }
 
 
@@ -72,7 +72,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
-    background: #0D47A1;
+    background: #673AB7;
     color: #fff;    
 }
 
@@ -85,15 +85,16 @@ a {
     grid-template-columns: 150px 1fr;
     grid-gap: 20px;
     background: #fff;
-    color: #000;
+    color: #263238;
     text-decoration: none;
 }
+
 
 .home__tile:hover {
     transform: scale(1.05);
     transition: all 0.3s ease-out;
     cursor: pointer;
-    background-color: #0D47A1;;
+    background-color: #673AB7;
     color: #fff;
 }
 
@@ -101,3 +102,4 @@ a {
     width: 100%;
     max-width: 130px;
 }
+

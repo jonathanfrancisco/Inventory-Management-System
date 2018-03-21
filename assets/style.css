@@ -1,0 +1,51 @@
+
+input[type="submit"] {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.85;
+}
+
+/******************
+    LOGIN FORM
+*******************/
+
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.login-body__form {
+    box-shadow: 0px 0px 5px 2px #c5c5c5;
+    width: 100%;
+    max-width: 300px;
+    padding: 1em;
+    background: #fff;
+}
+
+.login-body__form label {
+    font-size: 1.2em;
+    color: #2962FF;
+}
+
+.login-body__form input {
+    outline: none;
+    margin: 0;
+    padding: .5em;
+    margin-bottom: .5em;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+} 
+
+.login-body__form input[type="submit"] {
+    background-color: #1A237E;
+}
+

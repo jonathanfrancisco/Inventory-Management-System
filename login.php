@@ -7,9 +7,9 @@
     <title>Login</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="login-body">
+<body class="login">
 
-    <form class="login-body__form" method="POST" action="login.php">
+    <form class="login__form" method="POST" action="login.php">
         <label for="username">Username:</label>
         <br>
         <input required id="username" type="text" name="username">

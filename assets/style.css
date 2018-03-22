@@ -23,6 +23,10 @@ a {
     color: #fff;    
 }
 
+body {
+    margin: 0;
+}
+
 /******************
     LOGIN FORM
 *******************/
@@ -66,29 +70,28 @@ a {
     HOME / DASHBOARD
 ************************/
 .home {
-    display: grid;
-    grid-auto-rows: auto-fill;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: .75em;
     min-height: 95vh;
-    margin: 0;
 }
 
-.home__tile {
-    grid-column: span 2;
+.home__dashboard {
+    display: grid;  
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.home__dashboard__tile {
     padding: 1em;
     padding-left: 2em;
     box-shadow: 0px 0px 5px 2px #c5c5c5;
     display: grid;
     grid-template-columns: 150px 1fr;
-    grid-gap: 20px;
     background: #fff;
     color: #263238;
     text-decoration: none;
 }
 
 
-.home__tile:hover {
+.home__dashboard__tile:hover {
     transform: scale(1.05);
     transition: all 0.3s ease-out;
     cursor: pointer;
@@ -96,7 +99,7 @@ a {
     color: #fff;
 }
 
-.home__tile img {
+.home__dashboard__tile img {
     width: 100%;
     max-width: 130px;
 }

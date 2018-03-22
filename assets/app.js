@@ -8,7 +8,7 @@ var tickClock = () => {
 
 var updateTime = (time, hours, seconds) => {
     var currentTime = `${time}:${hours}:${seconds} ${time >= 12 ? "PM" : "AM"}`;
-    document.querySelector('.home__header__time').innerHTML = currentTime;
+    document.querySelector('.header__time').innerHTML = currentTime;
 }
 
 setInterval(tickClock,1000);

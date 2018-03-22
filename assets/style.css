@@ -13,10 +13,19 @@ a {
     color: #fff;
 }
 
+.header {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    background: #673AB7;
+    color: #fff;    
+}
+
 /******************
     LOGIN FORM
 *******************/
-
 
 .login {
     display: flex;
@@ -53,7 +62,6 @@ a {
     background-color: #673AB7;
 }
 
-
 /***********************
     HOME / DASHBOARD
 ************************/
@@ -64,16 +72,6 @@ a {
     grid-gap: .75em;
     min-height: 95vh;
     margin: 0;
-}
-
-.home__header {
-    grid-column: span 4;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    align-items: center;
-    background: #673AB7;
-    color: #fff;    
 }
 
 .home__tile {

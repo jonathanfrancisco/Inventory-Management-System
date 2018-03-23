@@ -27,6 +27,31 @@ body {
     margin: 0;
 }
 
+.table {
+    max-width: 100%;
+    max-width: 900px;
+    margin: 1em auto;
+    box-shadow: 0px 0px 5px 2px #c5c5c5;;
+
+}
+
+.table__header {
+    background: #673AB7;
+    color: #fff;
+}
+
+.table__row {
+    padding: .5em 0;
+}
+
+.table__row a {
+    color: #000;
+}
+
+.table__row p, .table__row h3 {
+    margin: 0;
+}
+
 /******************
     LOGIN FORM
 *******************/
@@ -105,3 +130,12 @@ body {
     max-width: 130px;
 }
 
+/***********
+    BRAND
+*************/
+
+.brand__row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}

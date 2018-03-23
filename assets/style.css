@@ -111,6 +111,7 @@ body {
     box-shadow: 0px 0px 5px 2px #c5c5c5;
     display: grid;
     grid-template-columns: 150px 1fr;
+    align-items: center;
     background: #fff;
     color: #263238;
     text-decoration: none;

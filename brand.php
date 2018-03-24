@@ -10,7 +10,7 @@
 <body>
 
     <div class="header">
-        <h1>Welcome, Bro!</h1>
+        <a href="home.php"><img src="assets/images/previous.png"><h2>Back</h2></a>
         <h2 class="header__time"></h2>
         <a href="logout.php"><h2>Logout</h2></a>
     </div>

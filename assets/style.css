@@ -27,12 +27,13 @@ body {
     margin: 0;
 }
 
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
 .table {
     max-width: 100%;
-    max-width: 900px;
-    margin: 1em auto;
     box-shadow: 0px 0px 5px 2px #c5c5c5;;
-
 }
 
 .table__header {

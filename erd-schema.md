@@ -21,11 +21,11 @@
 * product_id
 * product_barcode
 * product_name
-* prouct_st ock
+* prouct_stock
 * product_discount
 * category_id
 * brand_id
-> ### PRODUCT_INVENTORY
+> ### INVENTORY_PRODUCT
 * inventory_id
 * product_id
 * quantity

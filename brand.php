@@ -24,32 +24,32 @@
                 <h3>Actions</h3>
             </div>
             <div class="table__row brand__row">
-                <p>1</p>
-                <p>Asus</p>
+                <h4>1</h4>
+                <h4>Asus</h4>
                 <div>
                     <a class="action-btn update" href="">Update</a>
                     <a class="action-btn remove" href="">Remove</a>
                 </div>  
             </div>
             <div class="table__row brand__row">
-                <p>2</p>
-                <p>Lenovo</p>
+                <h4>2</h4>
+                <h4>Lenovo</h4>
                 <div>
                     <a class="action-btn update" href="">Update</a>
                     <a class="action-btn remove" href="">Remove</a>
                 </div>  
             </div>
             <div class="table__row brand__row">
-                <p>3</p>
-                <p>Nvidia</p>
+                <h4>3</h4>
+                <h4>Nvidia</h4>
                 <div>
                     <a class="action-btn update" href="">Update</a>
                     <a class="action-btn remove" href="">Remove</a>
                 </div>  
             </div>
             <div class="table__row brand__row">
-                <p>4</p>
-                <p>Intel</p>
+                <h4>4</h4>
+                <h4>Intel</h4>
                 <div>
                     <a class="action-btn update" href="">Update</a>
                     <a class="action-btn remove" href="">Remove</a>

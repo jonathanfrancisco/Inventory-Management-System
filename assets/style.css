@@ -56,7 +56,7 @@ body {
     padding: .8em 0;
 }
 
-.table__row p, .table__row h3 {
+.table__row p, .table__row h3, .table__row h4 {
     margin: 0;
 }
 

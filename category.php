@@ -26,32 +26,32 @@
 
 
             <div class="table__row category__row">
-                <p>1</p>
-                <p>Graphics Cards</p>
+                <h4>1</h4>
+                <h4>Graphics Cards</h4>
                 <div>
                     <a class="action-btn update" href="">Update</a>
                     <a class="action-btn remove" href="">Remove</a>
                 </div>
             </div>
             <div class="table__row category__row">
-                <p>2</p>
-                <p>Processors</p>
+                <h4>2</h4>
+                <h4>Processors</h4>
                 <div>
                     <a class="action-btn update" href="">Update</a>
                     <a class="action-btn remove" href="">Remove</a>
                 </div>  
             </div>
             <div class="table__row category__row">
-                <p>3</p>
-                <p>Motherboards</p>
+                <h4>3</h4>
+                <h4>Motherboards</h4>
                 <div>
                     <a class="action-btn update" href="">Update</a>
                     <a class="action-btn remove" href="">Remove</a>
                 </div>  
             </div>
             <div class="table__row category__row">
-                <p>4</p>
-                <p>Storage Devices</p>
+                <h4>4</h4>
+                <h4>Storage Devices</h4>
                 <div>
                     <a class="action-btn update" href="">Update</a>
                     <a class="action-btn remove" href="">Remove</a>

@@ -14,17 +14,13 @@ a {
 }
 
 .header {
-    grid-column: span 4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
-    background: #673AB7;
+    text-align: center;
+    background: #3c40c6;
     color: #fff;    
-}
-
-.header a {
-    display: flex;
 }
 
 .header a:hover > img {
@@ -52,21 +48,33 @@ body {
 }
 
 .table__header {
-    background: #673AB7;
+    background: #3c40c6;
     color: #fff;
 }
 
 .table__row {
-    padding: .5em 0;
-}
-
-.table__row a {
-    color: #000;
+    padding: .8em 0;
 }
 
 .table__row p, .table__row h3 {
     margin: 0;
 }
+
+.action-btn {
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.update {
+    background: #05c46b;
+}
+
+.remove {
+    background: #ff5e57;
+}
+
+
 
 /******************
     LOGIN FORM
@@ -118,13 +126,10 @@ body {
 /***********************
     HOME / DASHBOARD
 ************************/
-.home {
-    min-height: 95vh;
-}
 
 .home__dashboard {
     display: grid;  
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 20px;
     padding: 18px;
 }
@@ -146,7 +151,7 @@ body {
     transform: scale(1.05);
     transition: all 0.3s ease-out;
     cursor: pointer;
-    background-color: #673AB7;
+    background-color: #3c40c6;
     color: #fff;
 }
 

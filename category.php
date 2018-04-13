@@ -10,13 +10,13 @@
 <body>
 
     <div class="header">
-        <a href="home.php"><img src="assets/images/previous.png"><h2>Back</h2></a>
+        <h1>Inventory Management System</h1>
         <h2 class="header__time"></h2>
         <a href="logout.php"><h2>Logout</h2></a>
     </div>
 
     <div class="container">
-        <h1>Manage categories</h1>
+        <h2>Manage Categories</h2>
         <div class="table">
             <div class="table__header table__row category__row">
                 <h3>#</h3>
@@ -29,32 +29,32 @@
                 <p>1</p>
                 <p>Graphics Cards</p>
                 <div>
-                    <a href="">Update</a>
-                    <a href="">Remove</a>
-                </div>  
+                    <a class="action-btn update" href="">Update</a>
+                    <a class="action-btn remove" href="">Remove</a>
+                </div>
             </div>
             <div class="table__row category__row">
                 <p>2</p>
                 <p>Processors</p>
                 <div>
-                    <a href="">Update</a>
-                    <a href="">Remove</a>
+                    <a class="action-btn update" href="">Update</a>
+                    <a class="action-btn remove" href="">Remove</a>
                 </div>  
             </div>
             <div class="table__row category__row">
                 <p>3</p>
                 <p>Motherboards</p>
                 <div>
-                    <a href="">Update</a>
-                    <a href="">Remove</a>
+                    <a class="action-btn update" href="">Update</a>
+                    <a class="action-btn remove" href="">Remove</a>
                 </div>  
             </div>
             <div class="table__row category__row">
                 <p>4</p>
                 <p>Storage Devices</p>
                 <div>
-                    <a href="">Update</a>
-                    <a href="">Remove</a>
+                    <a class="action-btn update" href="">Update</a>
+                    <a class="action-btn remove" href="">Remove</a>
                 </div>  
             </div>
         </div>

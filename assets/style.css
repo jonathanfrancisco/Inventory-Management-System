@@ -5,12 +5,16 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, button:hover, .action-btn:hover {
     opacity: 0.85;
 }
 
 a {
     color: #fff;
+}
+
+button {
+    border: none;
 }
 
 .header {
@@ -61,11 +65,12 @@ body {
     margin: 0;
 }
 
-.action-btn {
+.action-btn, .add, .search {
     text-decoration: none;
     padding: 5px;
     border-radius: 3px;
 }
+
 
 .update {
     background: #05c46b;
@@ -75,6 +80,48 @@ body {
     background: #ff5e57;
 }
 
+.add, .search {
+    background: #3c40c6;
+    color: #fff;
+}
+
+.add {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.search-box {
+    font-size: 1.15em;
+    padding: 5px;
+}
+
+.search__add__container {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    grid-gap: 100px;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.search__add__container form {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    grid-gap: 20px;
+}
+
+.container__header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1em 0;
+}
+
+.container__header h1 {
+    text-align: center;
+}
+
+.container__header a {
+    color: #000;
+}
 
 
 /******************
@@ -175,3 +222,9 @@ body {
 .product__row {
     grid-template-columns: repeat(7, 1fr);
 }
+
+/****************************
+    
+*****************************/
+
+

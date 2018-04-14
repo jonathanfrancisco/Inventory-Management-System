@@ -16,7 +16,18 @@
     </div>
 
     <div class="container">
-        <h2>Manage Brands</h2>
+        <div class="container__header">
+            <a href="home.php"><h2>< Back</h2></a>
+            <h1>Manage Brands</h1>
+        </div>
+        <div class="search__add__container">
+            <form>
+                <input class="search-box" type="search" name="q" placeholder="Search category">
+                <input class="search" type="submit" value="Search" class="search-btn">
+            </form>
+            <button class="add">+ Add Brand</button>
+        </div>
+
         <div class="table">
             <div class="table__header table__row brand__row">
                 <h3>#</h3>

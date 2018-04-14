@@ -124,6 +124,19 @@ body {
 }
 
 
+
+.errorMessage {
+    background: tomato;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.errorMessage h3 {
+    margin: 0;
+}
+
 /******************
     LOGIN FORM
 *******************/

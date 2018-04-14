@@ -1,3 +1,27 @@
+<?php
+
+    require('functions.php');
+    session_start();
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $result = fetchData("SELECT * FROM user WHERE username = '$username' AND password = '$password'");
+        if($result->num_rows == 1) {
+            $_SESSION["loggedIn"] = true;
+            header("location:home.php");
+        }
+        else
+            $errorMessage = "Incorrect username or password";
+    }
+
+    else if(isset($_SESSION["loggedIn"]))
+        header("location:home.php");
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +34,12 @@
 <body class="login">
 
     <form class="login__form" method="POST" action="login.php">
+        <?php
+
+            if(isset($errorMessage))
+                echo "<div class='errorMessage'><h3>Incorrect username or password</h3></div>"
+
+        ?>
         <label for="username">Username:</label>
         <br>
         <input required id="username" type="text" name="username">

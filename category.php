@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    }
+
+    else if(!isset($_SESSION["loggedIn"]))
+        header("location:login.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -8,7 +8,7 @@
 
     // for inserting, updating, and removing data
     function manageData($query) {
-
+        mysqli_query(getConnection(),$query);
     }
 
     function getConnection() {

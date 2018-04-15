@@ -12,3 +12,17 @@ var updateTime = (time, hours, seconds) => {
 }
 
 setInterval(tickClock,1000);
+
+function toggleAddModal() {
+   document.querySelector('.modal-add').classList.toggle('show-modal');
+   document.querySelector('.modal-add__form').classList.toggle('show-modal__form');
+}
+
+function toggleEditModal() {
+    document.querySelector('.modal-edit').classList.toggle('show-modal');
+}
+
+
+function toggleStockModal() {
+    document.querySelector('.modal-stock').classList.toggle('show-modal');
+}

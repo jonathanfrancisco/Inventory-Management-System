@@ -29,6 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="login">
@@ -46,7 +47,7 @@
         <br>
         <label for="password">Password:</label>
         <br>
-        <input required id="username" type="password" name="password">
+        <input required id="password" type="password" name="password">
         <br>
         <input type="submit" value="Login">
     </form>

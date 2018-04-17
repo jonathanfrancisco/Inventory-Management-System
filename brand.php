@@ -38,6 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Brand</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -86,7 +87,7 @@
     <div class="container">
         <div class="container__header">
             <a href="home.php"><h2>< Back</h2></a>
-            <h1>Manage Brands</h1>
+            <h2>Manage Brands</h2>
         </div>
         <div class="search__add__container">
             <form>

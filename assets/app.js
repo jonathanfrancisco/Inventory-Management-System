@@ -6,8 +6,8 @@ var tickClock = () => {
     updateTime(hours, minutes, seconds);
 }
 
-var updateTime = (time, hours, seconds) => {
-    var currentTime = `${time}:${hours}:${seconds} ${time >= 12 ? "PM" : "AM"}`;
+var updateTime = (hours, minutes, seconds) => {
+    var currentTime = `${hours >= 12 ? hours - 12 : hours}:${minutes}:${seconds} ${hours >= 12 ? "PM" : "AM"}`;
     document.querySelector('.header__time').innerHTML = currentTime;
 }
 

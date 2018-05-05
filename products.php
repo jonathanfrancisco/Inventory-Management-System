@@ -14,7 +14,10 @@
        if($_POST["type"] == "add") {    
            $productStocks = (int)$_POST["productStocks"];
            manageData("INSERT INTO product (product_barcode, product_name, product_stock, category_id, brand_id) VALUES('$productBarcode','$productName','$productStocks','$productCategory','$productBrand')");
+           $newProduct = fetchData("SELECT * F");
+           $row = mysqli_fetch_assoc($newProduct);    
            $latestPage = ceil(fetchData("SELECT product.product_id, product.product_barcode, product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id;")->num_rows / 10);
+           manageData("INSERT INTO inventory (inventory_action, inventory_quantity, product_id, inventory_date) VALUES('NEW PRODUCT STOCK-IN','$productSTocks', $id, NOW())");
            header("location:products.php?q=&page=$latestPage");
        }
        
@@ -27,11 +30,14 @@
            $number = $_POST["numOfStocks"];
            $id = $_POST["id"];
            manageData("UPDATE product SET product_stock = product_stock+$number WHERE product_id = '$id'");
+           manageData("INSERT INTO inventory (inventory_action, inventory_quantity, product_id, inventory_date) VALUES('STOCK-IN','$number', $id, NOW())");
+           // add inventory log stock in
        }
        else if($_POST["type"] == "stockout") {
            $number = $_POST["numOfStocks"];
            $id = $_POST["id"];
            manageData("UPDATE product SET product_stock = product_stock-$number WHERE product_id = '$id'");
+           manageData("INSERT INTO inventory (inventory_action, inventory_quantity, product_id, inventory_date) VALUES('STOCK-OUT','$number', $id, NOW())");
        }
 
 

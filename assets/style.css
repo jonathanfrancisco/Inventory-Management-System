@@ -336,7 +336,7 @@ body {
     BRAND / CATEGORY / PRODUCTS
 **********************************/
 
-.brand__row, .category__row, .product__row {
+.brand__row, .category__row, .product__row, .inventory__row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
@@ -346,5 +346,37 @@ body {
 .product__row {
     grid-template-columns: repeat(7, 1fr);
 }
+
+.inventory__row {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/****
+    SALES & INVENTORY
+*****/
+
+.tab-form {
+    display: flex;
+}
+
+.tab-form a {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+    padding: 10px;
+    color: #000;
+    box-shadow: 0px -2px 8px -2px #000;
+    text-decoration: none;
+}
+
+a.tab-selected {
+    background: rgba(60,64,198);
+    color: #fff;
+}
+
+
+
+
+
 
 

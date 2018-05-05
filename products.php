@@ -8,22 +8,23 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
         $productBarcode = @$_POST["productBarcode"];
         $productName = @$_POST["productName"];
+        $productPrice = (int)@$_POST["productPrice"];
         $productCategory = (int)@$_POST["productCategory"];
         $productBrand = (int)@$_POST["productBrand"];
 
        if($_POST["type"] == "add") {    
+            
            $productStocks = (int)$_POST["productStocks"];
-           manageData("INSERT INTO product (product_barcode, product_name, product_stock, category_id, brand_id) VALUES('$productBarcode','$productName','$productStocks','$productCategory','$productBrand')");
-           $newProduct = fetchData("SELECT * F");
-           $row = mysqli_fetch_assoc($newProduct);    
-           $latestPage = ceil(fetchData("SELECT product.product_id, product.product_barcode, product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id;")->num_rows / 10);
+           manageData("INSERT INTO product (product_barcode, product_name, product_price, product_stock, category_id, brand_id) VALUES('$productBarcode','$productName','$productPrice','$productStocks','$productCategory','$productBrand')");
+         
+           $latestPage = ceil(fetchData("SELECT product.product_id, product.product_barcode, product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id;")->num_rows / 10);
            manageData("INSERT INTO inventory (inventory_action, inventory_quantity, product_id, inventory_date) VALUES('NEW PRODUCT STOCK-IN','$productSTocks', $id, NOW())");
            header("location:products.php?q=&page=$latestPage");
        }
        
        else if($_POST["type"] == "update") {
           $id = $_POST["id"];
-          manageData("UPDATE product SET product_barcode = '$productBarcode', product_name = '$productName', category_id = '$productCategory', brand_id = '$productBrand' WHERE product_id = '$id'");
+          manageData("UPDATE product SET product_barcode = '$productBarcode', product_name = '$productName', product_price = '$productPrice', category_id = '$productCategory', brand_id = '$productBrand' WHERE product_id = '$id'");
        }
 
        else if($_POST["type"] == "stockin") {
@@ -98,7 +99,7 @@
     <?php
             if(isset($_GET["update"])){
                 $id = $_GET["update"];
-                $product = fetchData("SELECT product.product_id, product.product_barcode, product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id WHERE product.product_id = '$id'");
+                $product = fetchData("SELECT product.product_id, product.product_barcode, product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id WHERE product.product_id = '$id'");
                 $row = mysqli_fetch_assoc($product);    
 
 
@@ -134,6 +135,10 @@
                             "<br>".
                             "<input required type='text' name='productName' value='".$row["product_name"]."'>".
                             "<br>".
+                            "<label>Price:</label>".
+                            "<br>".
+                            "<input type='number' name='productPrice' value='".$row["product_price"]."'>".
+                            "<br>".
                             "<label>Category:</label>".
                             "<br>".
                             $categoriesHTML.
@@ -162,6 +167,10 @@
                 <label>Product Name:</label>
                 <br>
                 <input required type="text" name="productName">
+                <br>
+                <label>Price: </label>
+                <br>
+                <input type='number' name='productPrice'>
                 <br>
                 <label>Product Stock(s):</label>
                 <br>
@@ -221,6 +230,7 @@
                 <h3>#</h3>
                 <h3>Barcode</h3>
                 <h3>Name</h3>
+                <h3>Price</h3>
                 <h3>Available Stock(s)</h3>
                 <h3>Category</h3>
                 <h3>Brand</h3>
@@ -235,28 +245,29 @@
                 else 
                     $currentPage = $_GET["page"];   
                 $offset = $currentPage == 1 ? $offset = 0 : $offset = ($currentPage-1) * $itemsPerPage;
-                $totalPages = ceil((fetchData("SELECT product.product_id,product.product_barcode,product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id")->num_rows / $itemsPerPage));
+                $totalPages = ceil((fetchData("SELECT product.product_id,product.product_barcode,product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id")->num_rows / $itemsPerPage));
 
                 if(isset($_GET["q"]) && $_GET["q"] != "") {
                     $keywords = $_GET["q"];
                     if($keywords == "") {
-                        $products = fetchData("SELECT product.product_id,product.product_barcode, product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id LIMIT $itemsPerPage OFFSET $offset");
-                        $totalPages = (fetchData("SELECT product.product_id,product.product_barcode, product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id")->num_rows / $itemsPerPage);
+                        $products = fetchData("SELECT product.product_id,product.product_barcode, product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id LIMIT $itemsPerPage OFFSET $offset");
+                        $totalPages = (fetchData("SELECT product.product_id,product.product_barcode, product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id")->num_rows / $itemsPerPage);
                     }
                     else {
-                        $products = fetchData("SELECT product.product_id,product.product_barcode,product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id WHERE CONCAT(product.product_barcode, product.product_name, category.category_name, brand.brand_name) LIKE '%$keywords%' LIMIT $itemsPerPage OFFSET $offset");
-                        $totalPages = (fetchData("SELECT product.product_id,product.product_barcode,product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id WHERE CONCAT(product.product_barcode, product.product_name, category.category_name, brand.brand_name) LIKE '%$keywords%'")->num_rows / $itemsPerPage);
+                        $products = fetchData("SELECT product.product_id,product.product_barcode,product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id WHERE CONCAT(product.product_barcode, product.product_name, category.category_name, brand.brand_name) LIKE '%$keywords%' LIMIT $itemsPerPage OFFSET $offset");
+                        $totalPages = (fetchData("SELECT product.product_id,product.product_barcode,product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id WHERE CONCAT(product.product_barcode, product.product_name, category.category_name, brand.brand_name) LIKE '%$keywords%'")->num_rows / $itemsPerPage);
                     }
                 }
 
                 else 
-                    $products = fetchData("SELECT product.product_id, product.product_barcode, product.product_name, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id LIMIT $itemsPerPage OFFSET $offset");
+                    $products = fetchData("SELECT product.product_id, product.product_barcode, product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id LIMIT $itemsPerPage OFFSET $offset");
               
                 while($row = mysqli_fetch_array($products))
                     echo "<div class='table__row product__row'>".
                             "<h4>".$row["product_id"]."</h4>".
                             "<h4>".$row["product_barcode"]."</h4>".
                             "<h4>".$row["product_name"]."</h4>".
+                            "<h4>".$row["product_price"]."</h4>".
                             "<h4>".$row["product_stock"]."</h4>".
                             "<h4>".$row["category_name"]."</h4>".
                             "<h4>".$row["brand_name"]."</h4>".

@@ -344,7 +344,7 @@ body {
 }
 
 .product__row {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
 }
 
 .inventory__row {
@@ -376,7 +376,61 @@ a.tab-selected {
 
 
 
+/*****
+    POINT OF SALE
+*****/
+
+.container__body {
+    text-align: center;
+}
+
+.container__body input {
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px -2px #000;
+}
+
+.productsCart {
+    padding: 1em;
+    max-width: 800px;
+    margin: 0 auto 10px;
+    max-height: 300px;
+    box-shadow: 0px 0px 4px -2px #000;
+    overflow: scroll;
+    
+}
 
 
+.container__body input[type="submit"] {
+    font-size: 2em;
+    margin-top: 1.5em;
+    background-color: #3c40c6
+}
 
 
+.cartRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 50px;
+    margin-bottom: 1em;
+}
+
+.cartRow select {
+    font-size: 0.5em;
+}
+
+.removeCartRow {
+    background-color: tomato;
+    color: #fff;
+}
+
+.addCartRow {
+    background-color: #3ae374;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-bottom: 2.5em;
+    padding: 5px;
+}

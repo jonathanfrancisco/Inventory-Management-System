@@ -58,7 +58,7 @@
                 echo "<div class='modal-container modal-invoice show-modal'>".
                         "<form action='products.php' method='POST' class='modal-container__modal-form modal-edit__form show-modal__form'>".
                             "<h2>Invoice Details</h2>".
-
+                            "<p><strong>Invoice #: </strong>".$row["invoice_id"]."</p>".
                             "<p><strong>Transaction Date: </strong>".date_format(date_create($row["invoice_date"]), 'g:ia \o\n l jS F Y')."</p>".
                             "<p><strong>Customer Name: </strong>".$row["customer_name"]."</p>".
                             "<p><strong>Customer Address: </strong>".$row["customer_address"]."</p>".

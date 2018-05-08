@@ -10,6 +10,21 @@ if(!isset($_SESSION["loggedIn"]))
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
  
+
+    $cName = $_POST["customerName"];
+    $cContact = $_POST["customerContact"];
+    $cAddress = $_POST["customerAddress"];
+    $totAmount = $_POST["totalAmount"];
+    $paidAmount = $_POST["paidAmount"];
+
+    manageData("INSERT INTO invoice (invoice_date, customer_name, customer_contact, customer_address, total_amount, amount_paid) VALUES(NOW(),'$cName', '$cContact', '$cAddress','$totAmount','$paidAmount')");
+
+    $lastInserted = fetchData("SELECT * FROM invoice ORDER BY invoice_id DESC LIMIT 1");
+    $row = mysqli_fetch_assoc($lastInserted);  
+    
+    
+    $invoiceID = $row["invoice_id"];
+
  
     
 
@@ -20,18 +35,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $quantity = $_POST["quantity"][$i];
        manageData("UPDATE product SET product_stock = product_stock-$quantity WHERE product_id = '$id'");
        manageData("INSERT INTO inventory (inventory_action, inventory_quantity, product_id, inventory_date) VALUES('STOCK-OUT','$quantity', $id, NOW())");
-       manageData("INSERT INTO invoice_product (product_id, quantity) VALUES('$id','$quantity')");
+       manageData("INSERT INTO invoice_product (invoice_id, product_id, quantity) VALUES('$invoiceID','$id','$quantity')");
     }
 
   
-    $cName = $_POST["customerName"];
-    $cContact = $_POST["customerContact"];
-    $cAddress = $_POST["customerAddress"];
-    $totAmount = $_POST["totalAmount"];
-    $paidAmount = $_POST["paidAmount"];
-
-    manageData("INSERT INTO invoice (invoice_date, customer_name, customer_contact, customer_address, total_amount, amount_paid) VALUES(NOW(),'$cName', '$cContact', '$cAddress','$totAmount','$paidAmount')");
-
+   
 
  
 

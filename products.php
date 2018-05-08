@@ -267,7 +267,7 @@
                             "<h4>".$row["product_id"]."</h4>".
                             "<h4>".$row["product_barcode"]."</h4>".
                             "<h4>".$row["product_name"]."</h4>".
-                            "<h4>".$row["product_price"]."</h4>".
+                            "<h4>₱".$row["product_price"]."</h4>".
                             "<h4>".$row["product_stock"]."</h4>".
                             "<h4>".$row["category_name"]."</h4>".
                             "<h4>".$row["brand_name"]."</h4>".

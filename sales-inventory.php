@@ -85,11 +85,24 @@
     
     <div class="container">
 
+        
+
         <div class="container__header">
             <a href="home.php"><h2>< Back</h2></a>
             <h2>Sales & Inventory Log</h2>
         </div>
+            
+        <?php
+            if($view == "sales")
+                echo "<div class='search__add__container'>
+                    <form>
+                    <input type='hidden' name='view' value='sales'>
+                        <input class='search-box' type='search' name='q' placeholder='Search invoice'>
+                        <input class='search' type='submit' value='Search' class='search-btn'>
+                    </form>
+                </div>";
 
+        ?>
         
         <div class="tab-form">
             <a class="<?php if($view == "inventory") echo "tab-selected"; else {} ?>" href="sales-inventory.php?view=inventory">Inventory Log</a>
@@ -127,19 +140,6 @@
                     $offset = $currentPage == 1 ? $offset = 0 : $offset = ($currentPage-1) * $itemsPerPage;
                     $totalPages = ceil((fetchData("SELECT * FROM inventory")->num_rows / $itemsPerPage));
 
-                    // if(isset($_GET["q"]) && $_GET["q"] != "") {
-                    //     $keywords = $_GET["q"];
-                    //     if($keywords == "") {
-                    //         $categories = fetchData("SELECT * FROM category LIMIT $itemsPerPage OFFSET $offset");
-                    //         $totalPages = (fetchData("SELECT * FROM category")->num_rows / $itemsPerPage);
-                    //     }
-                    //     else {
-                    //         $categories = fetchData("SELECT * FROM category WHERE category_name LIKE '%$keywords%' LIMIT $itemsPerPage OFFSET $offset");
-                    //         $totalPages = (fetchData("SELECT * FROM category WHERE category_name LIKE '%$keywords%'")->num_rows / $itemsPerPage);
-                    //     }
-                    // }
-
-                    // else 
                     $iventoriesLog = fetchData("SELECT * FROM inventory INNER JOIN product ON inventory.product_id = product.product_id ORDER BY inventory_id DESC LIMIT $itemsPerPage OFFSET $offset");
             
                     while($row = mysqli_fetch_array($iventoriesLog)) {
@@ -168,7 +168,25 @@
                     $offset = $currentPage == 1 ? $offset = 0 : $offset = ($currentPage-1) * $itemsPerPage;
                     $totalPages = ceil((fetchData("SELECT * FROM invoice")->num_rows / $itemsPerPage));
 
-                    $salesLog = fetchData("SELECT * FROM invoice ORDER BY invoice_id DESC LIMIT $itemsPerPage OFFSET $offset");
+
+                    if(isset($_GET["q"]) && $_GET["q"] != "") {
+                        $keywords = $_GET["q"];
+                        if($keywords == "") {
+                            $salesLog = fetchData("SELECT * FROM invoice LIMIT $itemsPerPage OFFSET $offset");
+                            $totalPages = (fetchData("SELECT * FROM invoice")->num_rows / $itemsPerPage);
+                        }
+                        else {
+                            $salesLog = fetchData("SELECT * FROM invoice WHERE CONCAT(invoice_id,invoice_date, customer_name) LIKE '%$keywords%' LIMIT $itemsPerPage OFFSET $offset");
+                            $totalPages = (fetchData("SELECT * FROM invoice WHERE CONCAT(invoice_id,invoice_date, customer_name) LIKE '%$keywords%'")->num_rows / $itemsPerPage);
+                        }
+                    }
+    
+                    
+                    
+
+
+                    else 
+                        $salesLog = fetchData("SELECT * FROM invoice ORDER BY invoice_id DESC LIMIT $itemsPerPage OFFSET $offset");
             
                     while($row = mysqli_fetch_array($salesLog)) {
                         echo "<div class='table__row inventory__row'>".
@@ -182,7 +200,7 @@
 
                 }
 
-                //sales-inventory.php?view=sales&q=&page=2&detailed=1
+              
 
 
 

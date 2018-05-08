@@ -16,9 +16,11 @@
             
            $productStocks = (int)$_POST["productStocks"];
            manageData("INSERT INTO product (product_barcode, product_name, product_price, product_stock, category_id, brand_id) VALUES('$productBarcode','$productName','$productPrice','$productStocks','$productCategory','$productBrand')");
-         
-           $latestPage = ceil(fetchData("SELECT product.product_id, product.product_barcode, product.product_name, product_price, product.product_stock, category.category_id, category.category_name, brand.brand_id, brand.brand_name FROM product INNER JOIN category ON product.category_id = category.category_id INNER JOIN brand ON product.brand_id = brand.brand_id;")->num_rows / 10);
-           manageData("INSERT INTO inventory (inventory_action, inventory_quantity, product_id, inventory_date) VALUES('NEW PRODUCT STOCK-IN','$productSTocks', $id, NOW())");
+           $lastInserted = fetchData("SELECT * FROM product ORDER BY product_id DESC LIMIT 1");
+           $row = mysqli_fetch_assoc($lastInserted);
+           $id = $row["product_id"];
+           $latestPage = ceil(fetchData("SELECT * FROM product")->num_rows / 10);
+           manageData("INSERT INTO inventory (inventory_action, inventory_quantity, product_id, inventory_date) VALUES('NEW PRODUCT STOCK-IN','$productStocks', $id, NOW())");
            header("location:products.php?q=&page=$latestPage");
        }
        

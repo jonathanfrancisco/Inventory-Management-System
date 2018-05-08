@@ -144,7 +144,7 @@
             
                     while($row = mysqli_fetch_array($iventoriesLog)) {
                         
-                        $row["inventory_action"] == "STOCK-IN" ? $color = "green" : $color = "red";
+                        $row["inventory_action"] == "STOCK-OUT" ? $color = "red" : $color = "green";
 
                         echo "<div class='table__row inventory__row'>".
                                 "<h4>".$row["inventory_id"]."</h4>".

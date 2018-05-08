@@ -168,7 +168,7 @@ body {
 *****************************/
 
 .modal-body--open {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .modal-container {
@@ -434,3 +434,37 @@ a.tab-selected {
     padding: 5px;
 }
 
+
+.modal-invoice  {
+    text-align: justify;
+}
+
+.modal-invoice form {
+    max-width: 800px;
+    overflow: scroll;
+}
+
+.modal-invoice h2, .modal-invoice h4  {
+    text-align: center;
+}
+
+.modal-invoice label {
+    text-align: center;
+}
+
+.modal-invoice p {
+    margin: 0;
+}
+
+.invoice-products {
+    border: 1px solid black;
+    margin-bottom: 2em;
+}
+
+.invoice-products__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+}

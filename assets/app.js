@@ -30,6 +30,13 @@ function toggleStockModal() {
     document.querySelector('body').classList.toggle('modal-body--open');  
 }
 
+function toggleInvoiceModal() {
+    document.querySelector('.modal-invoice').classList.toggle('show-modal');
+    document.querySelector('body').classList.toggle('modal-body--open');  
+}
+
+
+
 
 document.querySelector('.addCartRow').addEventListener('click', (event) => {
     event.preventDefault();

@@ -109,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                                 
                                 while($row = mysqli_fetch_array($products)) {
                                     
-                                    echo "<option value='".$row["product_id"]."' data-price='".$row["product_price"]."'>".$row["product_name"]."</option>";
+                                    echo "<option data-stocks='".$row["product_stock"]."' value='".$row["product_id"]."' data-price='".$row["product_price"]."'>".$row["product_name"]."</option>";
                                     
 
                                 }
@@ -127,7 +127,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <label>Quantity:</label>
                         <br>
-                        <input required class="quantity" min="1" type="text" name="quantity[]">
+                        <input required class="quantity" type="number" name="quantity[]" min="1">
                     </div>
                     <p>=</p>
                     <div>

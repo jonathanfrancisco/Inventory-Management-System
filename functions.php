@@ -12,7 +12,7 @@
     }
 
     function getConnection() {
-        return mysqli_connect("localhost","root","1234","inventory");
+        return mysqli_connect("localhost","admin","1234","inventory");
     }
 
     

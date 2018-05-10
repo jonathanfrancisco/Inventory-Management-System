@@ -108,8 +108,9 @@ document.querySelector('.productsCart').addEventListener('input', function(event
         var index = event.target.selectedIndex;
         var selectedProduct = event.target.options[index];
         var price = selectedProduct.getAttribute('data-price');
+        var maxQuantity = selectedProduct.getAttribute('data-stocks');
         var quantity = row.querySelector('.quantity').value || 1;
-        alert(quantity);
+        row.querySelector('.quantity').setAttribute('max', maxQuantity);
         row.querySelector('.price').value = price;
     }
 

@@ -4,7 +4,6 @@
 * middle_name
 * username
 * password
-* user_type
 > ### INVOICE
 * invoice_id
 * invoice_date
@@ -12,8 +11,8 @@
 * customer_contact
 * customer_adress
 * amount_paid
-* user_id
 > ### INVOICE_PRODUCT
+* invoice_product_id
 * invoice_id
 * product_id
 * quantity
@@ -21,18 +20,16 @@
 * product_id
 * product_barcode
 * product_name
+* product_price
 * prouct_stock
-* product_discount
 * category_id
 * brand_id
-> ### INVENTORY_PRODUCT
-* inventory_id
-* product_id
-* quantity
 > ### INVENTORY
 * inventory_id
-* inventory_type
-* user_id
+* inventory_action
+* inventory_quantity
+* product_id
+* inventory_date
 > ### CATEGORY
 * category_id
 * category_name
